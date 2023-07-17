@@ -47,7 +47,7 @@ def bisect_right(a, x, lo=0, hi=None, *, key=None):
     else:
         while lo < hi:
             mid = (lo + hi) // 2
-            if x < key(a[mid]):
+            if key(x) < key(a[mid]):
                 hi = mid
             else:
                 lo = mid + 1
@@ -100,7 +100,7 @@ def bisect_left(a, x, lo=0, hi=None, *, key=None):
     else:
         while lo < hi:
             mid = (lo + hi) // 2
-            if key(a[mid]) < x:
+            if key(a[mid]) < key(x):
                 lo = mid + 1
             else:
                 hi = mid
